@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            :root{
+    --color-1:#2f3240;
+}
+body{
+    font-family: monospace;
+   background-color: #e8eef3;
+    
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+ .container{
+max-width: 1170px;
+margin: auto;
+
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-item-center{
+align-items: center;
+}
+
+.justify-content.between{
+justify-content: space-between;
+}
+
+.header{
+    background-color: var(--color-1);
+    padding: 12px 0;
+    line-height: 1.5;
+    background-image: url("https://images.unsplash.com/photo-1631289990702-4134435297f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZyUyMHNob2NrfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+    height:600px;
+    background-size: cover;
+}
+
+.header .logo, 
+.header .nav{
+padding: 0 15px;
+}
+.header .logo a{
+    font-size: 30px;
+    color:#ffffff;
+    text-transform: capitalize;
+}
+.header .nav ul  li{
+ display: inline-block;
+ margin-left: 50px;
+}
+.header .nav ul  li a{
+    display: block;
+    font-size: 16px;
+    text-transform: capitalize;
+    color:#ffffff;
+    padding: 10px 0;
+    transition: all 0.5s ease;
+}
+
+.header .nav ul  li a.active,
+.header .nav ul  li a:hover{
+    color:#f3a93d;
+}
+.nav-toggler{
+    height:34px;
+    width:44px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: none;
+    margin-right: 15px;
+}
+
+
+.nav-toggler:focus{
+outline: none;
+box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.nav-toggler span{
+height: 2px;
+width:20px;
+background-color: var(--color-1);
+display: block;
+margin: auto;
+position: relative;
+transition: all 0.3s ease;
+}
+.nav-toggler .active span{
+    background-color: transparent;
+}
+.nav-toggler span::before,
+.nav-toggler span::after{
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: var(--color-1);
+transition: all 0.3s ease;
+}
+
+.nav-toggler span::before{
+    transform: translateY(-6px);
+}
+.nav-toggler .active span::before{
+    transform: rotate(45deg);
+}
+.nav-toggler span::after{
+    transform:translateY(6px);
+}
+.nav-toggler.active span::after{
+    transform: rotate(135deg);
+}
+@media(max-width:991px){
+    .nav-toggler{
+        display: block;
+    }
+    .header .nav{
+        width:100%;
+        /* background-color: red; */
+        padding: 0px;
+        max-height: 0px;
+        /* overflow: hidden; */
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+    .header .nav .open{
+        visibility: visible;
+
+    }
+    .header .nav ul{
+        padding: 12px 15px 0;
+        border-top: 1px solid rgba(255,255,255.0.2);
+        margin-top: 12px ;
+    }
+
+    .header .nav ul li{
+        display: block;
+        margin: 0;
+    }
+}
+.search{
+    margin-left: 80px;
+    width:300px;
+    font-family: monospace;
+    height:22px;
+}
+#heading1{
+color:white;
+margin: auto;
+margin-top: 150px;
+font-size: 60px;
+margin-left: 20px;
+font-family: monospace;
+}
+#para1{
+color: white;
+font-size: 15px;
+margin-left:20px;
+font-family: monospace;
+}
+.button{
+    color:black;
+    background-color: white;
+    font-size: 20px;
+    font-family: monospace;
+    border-radius: 5px;
+      margin-left: 30px;
+      cursor: pointer;
+}
+.button:hover{
+    color:yellow;
+    background-color: black;
+    width:200px;
+}
+.cards1{
+    margin-left: 100px;
+    display: flex;
+    gap: 80px;
+}
+.inputcards{
+    width:300px;
+    height:30px;
+    border:2px solid black;
+    border-radius: 5px;
+    font-family: monospace;
+}
+.product1{
+    width:200px;
+    margin-left: 45px;
+    height:30px;
+      color:black;
+    background-color: white;
+    font-size: 20px;
+    font-family: monospace;
+    border-radius: 5px;
+      cursor: pointer;
+   
+}
+.product1:hover{
+    color:yellow;
+    background-color: black;
+    width:200px;
+}
+.cardheading{
+margin-left: 30px;
+}
+.card1{
+    box-shadow: 10px 10px 10px 10px grey;
+    border-radius: 10px;
+}
+.cardimage{
+    border-radius: 10px;
+}
+
+.cards2{
+    margin-left: 100px;
+    display: flex;
+    gap: 80px;
+}
+.total{
+margin-left: 400px;
+margin-right: 400px;
+    font-size: 30px;
+    width:500px;
+    height:40px;
+    border:2px solid black;
+    border-radius: 5px;
+    font-family: monospace;
+    cursor: pointer;
+}
+.total:hover{
+    background-color: greenyellow;
+    transition: 3s;
+}
+
+@media only screen and (min-width:660px){
+    .cards1, .cards2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card1 {
+  flex: 0 0 300px;
+  margin: 10px;
+  text-align: center;
+}
+.header{
+    width:500px;
+    height:800px;
+}
+.total{
+font-size: 10px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+}
+}
+
+        </style>
+    </head>
+    
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="row align-item-center justify-content-between">
+                    <div class="logo">
+                        <a href="#">G_Shock</a>
+                    </div>
+                    <button type="button" class="nav-toggler">
+                        <span></span>
+                    </button>
+    
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Sports</a></li>
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <input type="text"placeholder="Search Here ..."class="search">
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </div>
+            <div id="heading">
+                <h1 id="heading1">We Have Your Favourite<br> Watches For You</h1>
+                <p id="para1">We have variety of watches in differents catagories</p><br>
+                <button class="button">More Watches</button> <button class="button">Buy Watches</button>
+            </div>
+        </header><br>
+
+        <div class="cards1">
+            <div class="card1">
+                <img src="https://static-01.daraz.pk/p/fc2f034d5abc041299ef2624dc25a748.jpg" alt="watch image"height="300"width="300px" class="cardimage"><br><br>
+                <h1 class="cardheading">Price Only 1250/</h1>
+                <input type="text"name="text"class="inputcards" id="inputcard1"><br><br>
+                <Button id="product1"class="product1" onclick="gshock1()">Add To Cart</Button><br><br>
+            </div>
+            <div class="card1">
+                <img src="https://static-01.daraz.pk/p/a021a13abeefbebaa418cb8bb7ed65d3.jpg" alt="watch image" height="300"
+                    width="300px" class="cardimage"><br><br>
+                    <h1 class="cardheading">Price Only 1550/</h1>
+                <input type="text" name="text" class="inputcards"  id="inputcard2"><br><br>
+                <Button id="product2" class="product1" onclick="gshock2()">Add To Cart</Button><br><br>
+            </div>
+            <div class="card1">
+                <img src="https://gshock.casio.com/content/casio/locales/intl/en/brands/gshock/_jcr_content/root/responsivegrid/container_1790102794/content_panel_list/content_panel_202108_364218212/image.casiocoreimg.jpeg/1681091901433/og-w800h800-logo-notext.jpeg" alt="watch image" height="300"
+                    width="300px" class="cardimage"><br><br>
+                    <h1 class="cardheading">Price Only 1150/</h1>
+                <input type="text" name="text" class="inputcards"  id="inputcard3"><br><br>
+                <Button id="product3" class="product1" onclick="gshock3()">Add To Cart</Button><br><br>
+            </div>
+        </div><br><br><br>
+    
+
+        <div class="cards2">
+            <div class="card1">
+                <img src="https://ecasiocentre.pk/wp-content/uploads/2023/01/GA-700SKE-7A.jpg" alt="watch image" height="300"
+                    width="300px" class="cardimage"><br><br>
+                <h1 class="cardheading">Price Only 1150/</h1>
+                <input type="text" name="text" class="inputcards"  id="inputcard4"><br><br>
+                <Button id="product4" class="product1" onclick="gshock4()">Add To Cart</Button><br><br>
+            </div>
+            <div class="card1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3tQn0NChUPqQAyzluVQkoqgaVn83sGhs2hw&usqp=CAU" alt="watch image" height="300"
+                    width="300px" class="cardimage"><br><br>
+                <h1 class="cardheading">Price Only 1550/</h1>
+                <input type="text" name="text" class="inputcards"  id="inputcard5"><br><br>
+                <Button id="product5" class="product1" onclick="gshock5()">Add To Cart</Button><br><br>
+            </div>
+            <div class="card1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsH-WftJQa__9Oq40r2Q9IUMsG97JbumfRel5JtfLjZ3F6_0kX6qW6TijTHDfPQesQWMg&usqp=CAU"
+                    alt="watch image" height="300" width="300px" class="cardimage"><br><br>
+                <h1 class="cardheading">Price Only 1450/</h1>
+                <input type="text" name="text" class="inputcards"  id="inputcard6"><br><br>
+                <Button id="product6" class="product1" onclick="gshock6()">Add To Cart</Button><br><br>
+            </div>
+        </div><br><br>
+<div class="totalbtn"><button onclick="total()" id="Totalbill" class="total">Total Bill</button></div>
+
+        <script>
+        var product1, product2, product3, product4, product5, product6;
+            function gshock1(){
+                var a = document.getElementById('inputcard1').value;
+                product1 = parseInt(a) * 1250;
+                alert(+ a + " product are selected");
+                return product1;
+            }
+
+              function gshock2() {
+                    var b = document.getElementById('inputcard2').value;
+                    product2 = parseInt(b) * 1550;
+                    alert(+ b + " product are selected");
+                    return product2;
+                }
+
+                  function gshock3() {
+                        var c = document.getElementById('inputcard3').value;
+                        product3 = parseInt(c) * 1150;
+                        alert(+ c + " product are selected");
+                        return product3;
+                    }
+
+                function gshock4(){
+                var d = document.getElementById('inputcard4').value;
+                product4 = parseInt(d) * 1150;
+                alert(+ d + " product are selected");
+                return product4;
+            }
+
+              function gshock5() {
+                    var e = document.getElementById('inputcard5').value;
+                    product5 = parseInt(e) * 1550;
+                    alert(+ e + " product are selected");
+                    return product5;
+                }
+
+                  function gshock6() {
+                        var f = document.getElementById('inputcard6').value;
+                        product6 = parseInt(f) * 1450;
+                        alert(+ f + " product are selected");
+                        return product6;
+                    }
+
+                      function total() {
+                            let p1 = product1;
+                            let p2 = product2;
+                            let p3 = product3;
+                            let p4 = product4;
+                            let p5 = product5;
+                            let p6 = product6;
+                            let totalBill = p1+p2+p3+p4+p5+p6;
+                            document.write('Your Total Bill is RS: ' + totalBill +" Only");
+                            document.write("<br>");
+                            document.write("Thanks For Buying");
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+         const navToggler = document.querySelector(".nav-toggler");
+            navToggler.addEventListener("click", navToggle);
+
+            function navToggle() {
+                navToggler.classList.toggle("active"); // "ClassList" should be "classList"
+                const nav = document.querySelector(".nav");
+                if (nav.classList.contains("open")) { // "ClassList" should be "classList"
+                    nav.style.maxHeight = nav.scrollHeight + "px"; // "MaxHeight" should be "maxHeight"
+                } else {
+                    nav.removeAttribute("style");
+                }
+            }
+
+
+              let para1 = document.getElementById("para1");
+                para1.addEventListener("mouseover", function () {
+                    para1.style.fontSize = "30px";
+                    para1.style.fontFamily = "monospace";
+                    para1.style.transition = "2s";
+                });
+
+                para1.addEventListener("mouseout", function () {
+                    para1.style.fontSize = "15px";
+                    para1.style.fontFamily = "monospace";
+                    para1.style.transition = "2s";
+                });
+        </script>
+    </body>
+    </html>
